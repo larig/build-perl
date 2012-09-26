@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Build Perl by larig</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,8 +18,7 @@
         <h1>Build Perl</h1>
         <p>living without perlbrew</p>
 
-        <p class="view"><a href="https://github.com/larig/build-perl">View the Project on GitHub <small>larig/build-perl</small></a></p>
-
+        <p class="view"><a href="https://github.com/larig/build-perl">View the project on GitHub <small>larig/build-perl</small></a></p>
 
         <ul>
           <li><a href="https://github.com/larig/build-perl/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -28,28 +27,65 @@
         </ul>
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
-
-<pre><code>$ git clone https://github.com/larig/build-perl.git
-$ cd build-perl
+        <h3>Build a custom perl</h3>
+        <h4>Stock Binary</h4>
+        <p>If you just want a perl binary, are flexible about which version, not
+        fussed about whether it is threaded, or optimised for your architecture,
+        then you most likely want a stock perl, which will be waiting for
+        download from wherever you normally get your packages.  (If you are on
+        Windows then Strawberry Perl is a good option and the options below are
+        most likely not open to you without something like cygwin.)  One
+        advantage of this route is you are using an identical binary to many
+        similar users.</p>
+        <h4>Perlbrew</h4>
+        <p>If you want a specific version of perl, and it's not important where
+        it goes, nor what library paths it uses, nor what environment variables
+        are needed, then a lot of people recommend perlbrew.  Some advantages of
+        this route are that it is fast to switch between perl versions and many
+        perl developers use the same approach.</p>
+        <h4>Standard Build</h4>
+        <p>If you want a specific version of perl, optimised for your hardware,
+        possibly choosing its installation path, with minimal environment
+        variables and the option of later customising the library path, then use
+        the standard build at
+        <a href="http://www.cpan.org/src/README.html">Get Perl</a>
+<pre><code>$ ./Configure -des -Dprefix=/opt/perl
+$ make && make test && make install
 </code></pre>
+        and come back here if you want further customisations.</p>
+        <h4>Custom Build</h4>
+        <p>If you are wanting a perl v5.12 or above then there is a very easy
+        route to customising where everything goes, including the library paths
+        that are searched by the binary.  The steps are just a small extension
+        to the Standard Build instructions.
+<pre><code>$ ./Configure -des -Dprefix=/opt/perl
+$ rm config.sh
+$ vi Policy.sh
+$ ./Configure -des -Dprefix=/opt/perl
+$ make && make test && make install
+</code></pre>
+        There are some checks you can do along the way to see the effects before
+        running the <code>make</code> step and the fuller story is at
+        <a
+          href="http://larig.wordpress.com/2012/09/13/build-your-own-custom-perl/">Build
+          your own custom perl</a></p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/larig">larig</a></p>
+        <p>This project is maintained by <a href="http://larig.github.com">Larig Tech</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
+<script src="js/scale.fix.js"></script>
           <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-35085859-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-35085859-1");
+        pageTracker._trackPageview();
+        } catch(err) {}
+      </script>
 
   </body>
 </html>
