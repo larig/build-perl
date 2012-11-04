@@ -42,7 +42,7 @@
         <h3>Build a custom perl</h3>
         <h4>Stock Binary</h4>
         <p>If you just want a perl binary, are flexible about which version, not
-        fussed about whether it is threaded, or optimised for your architecture,
+        fussed about whether it is threaded or optimised for your architecture,
         then you most likely want a stock perl, which will be waiting for
         download from wherever you normally get your packages.  (If you are on
         Windows then Strawberry Perl is a good option and the options below are
@@ -61,7 +61,7 @@
         variables and the option of later customising the library path, then use
         the standard build at
         <a href="http://www.cpan.org/src/README.html">Build Perl</a>
-<pre><code>$ ./Configure -des -Dprefix=/opt/perl/5.16.1
+<pre><code>$ ./Configure -des -Dprefix=/opt/perl/5.16.2
 $ make && make test && make install
 </code></pre>
         and come back here if you want further customisations.</p>
@@ -70,10 +70,10 @@ $ make && make test && make install
         route to customising where everything goes, including the library paths
         that are searched by the binary.  The steps are just a small extension
         to the Standard Build instructions.
-<pre><code>$ ./Configure -des -Dprefix=/opt/perl/5.16.1
+<pre><code>$ ./Configure -des -Dprefix=/opt/perl/5.16.2
 $ rm config.sh
 $ vi Policy.sh
-$ ./Configure -des -Dprefix=/opt/perl/5.16.1
+$ ./Configure -des -Dprefix=/opt/perl/5.16.2
 $ make && make test && make install
 </code></pre>
         There are some checks you can do along the way to see the effects before
