@@ -32,8 +32,8 @@
           project on GitHub <small>larig/build-perl</small></a></p>
 
         <ul>
-          <li><a href="https://github.com/larig/build-perl/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/larig/build-perl/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/larig/build-perl/wiki">Read the <strong>Wiki</strong></a></li>
           <li><a href="https://github.com/larig/build-perl">View On <strong>GitHub</strong></a></li>
         </ul>
 
@@ -61,7 +61,7 @@
         variables and the option of later customising the library path, then use
         the standard build at
         <a href="http://www.cpan.org/src/README.html">Build Perl</a>
-<pre><code>$ ./Configure -des -Dprefix=/opt/perl
+<pre><code>$ ./Configure -des -Dprefix=/opt/perl/5.16.1
 $ make && make test && make install
 </code></pre>
         and come back here if you want further customisations.</p>
@@ -70,17 +70,17 @@ $ make && make test && make install
         route to customising where everything goes, including the library paths
         that are searched by the binary.  The steps are just a small extension
         to the Standard Build instructions.
-<pre><code>$ ./Configure -des -Dprefix=/opt/perl
+<pre><code>$ ./Configure -des -Dprefix=/opt/perl/5.16.1
 $ rm config.sh
 $ vi Policy.sh
-$ ./Configure -des -Dprefix=/opt/perl
+$ ./Configure -des -Dprefix=/opt/perl/5.16.1
 $ make && make test && make install
 </code></pre>
         There are some checks you can do along the way to see the effects before
         running the <code>make</code> step and the fuller story is at
         <a
           href="http://larig.wordpress.com/2012/09/13/build-your-own-custom-perl/">Customise
-          perl</a></p>
+          Perl</a></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="http://larig.github.com">Larig Tech</a></p>
